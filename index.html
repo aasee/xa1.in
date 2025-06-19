@@ -14,6 +14,257 @@
       --accent: #0074D9;
       --text: #FFFFFF;
       --text-secondary: #B3B3B3;
+      --text-light: #D9D9D9;
+      --background: #001A35;
+      --nav-background: rgba(0, 31, 63, 0.95);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background-color: var(--background);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: var(--nav-background);
+      backdrop-filter: blur(10px);
+      padding: 1rem 5%;
+      z-index: 1000;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 0.5rem 0;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus {
+      color: white;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Header */
+    header {
+      background: var(--primary);
+      padding: 4rem 2rem;
+      margin-bottom: 4rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      color: white;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      margin-top: 1rem;
+    }
+
+    /* Sections */
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: white;
+      position: relative;
+      display: inline-block;
+    }
+
+    section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 70px;
+      height: 3px;
+      background: var(--accent);
+    }
+
+    section p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+      font-weight: 400;
+    }
+
+    section strong {
+      color: white;
+      font-weight: 600;
+    }
+
+    section h3 {
+      font-size: 1.5rem;
+      margin: 2.5rem 0 1rem;
+      color: white;
+      font-weight: 600;
+    }
+
+    section ul {
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+
+    section ul li {
+      position: relative;
+      padding-left: 1.75rem;
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+
+    section ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--primary);
+      color: var(--text-secondary);
+      text-align: center;
+      padding: 3rem 2rem;
+      font-size: 0.95rem;
+      margin-top: 4rem;
+    }
+
+    footer .contact-info {
+      margin-top: 1rem;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+
+      header {
+        padding: 3rem 1rem;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 1.1rem;
+      }
+
+      section {
+        padding: 3rem 1rem 4rem;
+      }
+
+      section h2 {
+        font-size: 1.75rem;
+      }
+
+      section p {
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      section h2 {
+        font-size: 1.5rem;
+      }
+
+      section p {
+        font-size: 0.95rem;
+      }
+    }
+    :root {
+      --primary: #001F3F;
+      --secondary: #003366;
+      --accent: #0074D9;
+      --text: #FFFFFF;
+      --text-secondary: #B3B3B3;
       --background: #001A35;
       --nav-background: rgba(0, 31, 63, 0.9);
     }
@@ -453,16 +704,77 @@
       </ul>
     </div>
   </nav>
+
   <header>
-    <h1>Investment and Partnership Opportunity in a Visionary Startup Incubator</h1>
-    <p>by Dhaya SinghDS</p>
+    <h1>Investment and Partnership Opportunity</h1>
+    <p>A Visionary Startup Incubator</p>
   </header>
 
-  <section id="introduction">
-    <h2>Introduction: Fostering Innovation in High-Impact Sectors</h2>
-    <p>This document outlines an exciting investment and partnership opportunity in a pioneering startup incubator poised to redefine India's innovation landscape. We are building a comprehensive ecosystem designed to identify, nurture, and scale early-stage startups across high-impact sectors: healthcare, fintech, electric vehicles (EV), renewable energy, and artificial intelligence (AI). Our strategic approach combines a dynamic corporate presence in Bangalore with a large-scale, cost-effective development center in Valliyoor, Tirunelveli District. This dual-hub model will foster a robust, self-sustaining environment for innovation, generating significant economic and social impact, and delivering substantial returns for our investors and partners.</p>
-    <p>We are thrilled to present a unique opportunity to invest in and partner with a groundbreaking startup incubator. Our core mission is to cultivate innovation within critical, high-growth sectors, including healthcare, fintech, electric vehicles (EV), renewable energy, and artificial intelligence (AI). By empowering promising early-stage startups, we aim to transform ambitious ideas into scalable, market-ready solutions that drive profound economic and social impact, not only within India but also on a global scale.</p>
-    <p>Our strategic vision involves establishing a resilient and vibrant ecosystem that serves as a beacon for entrepreneurial success. This ecosystem will be anchored by a state-of-the-art corporate office situated in Bangalore, India's undisputed technology capital, which will serve as the strategic and networking hub. Complementing this, we are developing a large-scale, cost-efficient development center in Valliyoor, located in the Tirunelveli District. This dual-location strategy allows us to leverage Bangalore's talent pool and connectivity while benefiting from the scalable and economically viable environment of Valliyoor, ultimately creating a sustainable and thriving hub for innovation and long-term growth.</p>
+  <main>
+    <section id="introduction">
+      <h2>Introduction</h2>
+      <p>We are building a comprehensive ecosystem to identify, nurture, and scale early-stage startups across high-impact sectors: healthcare, fintech, electric vehicles (EV), renewable energy, and artificial intelligence (AI).</p>
+      <p>Our strategic approach combines a dynamic corporate presence in Bangalore with a large-scale, cost-effective development center in Valliyoor, Tirunelveli District. This dual-hub model will foster a robust, self-sustaining environment for innovation, generating significant economic and social impact.</p>
+    </section>
+
+    <section id="vision">
+      <h2>Strategic Vision</h2>
+      <p>Our incubator is built upon a vision to nurture high-potential startups while establishing a self-sustaining ecosystem that generates long-term value. This approach combines urban connectivity with expansive development capabilities.</p>
+
+      <h3>Bangalore Corporate Office</h3>
+      <p>A 5,000 sq.ft state-of-the-art hub in Bangalore, India's technology capital, will serve as the nerve center for operations, mentorship, and startup support. This prime location provides access to top-tier talent, investor networks, and a vibrant tech community.</p>
+
+      <h3>Valliyoor Development Centre</h3>
+      <p>A sprawling 10-acre innovation campus in Valliyoor, Tirunelveli District, will provide startups with cutting-edge infrastructure, state-of-the-art laboratories, and collaborative spaces. This center offers a highly cost-effective environment for research and development.</p>
+
+      <h3>Long-Term Development</h3>
+      <p>Beyond the initial development, we will acquire an additional 20 acres adjacent to the campus in Valliyoor, totaling 30 acres. This land is reserved for phased development over the next 10 years, envisioning an integrated community complete with residential spaces for employees and commercial amenities.</p>
+    </section>
+
+    <section id="funding">
+      <h2>Funding Plan</h2>
+      <p>To bring this vision to fruition, we are raising Rs. 250 million, structured in multiples of Rs. 5 million, from strategic investors and partners. This capital will be allocated across key areas:</p>
+
+      <ul>
+        <li><strong>Land Acquisition:</strong> Rs. 150 million - Acquisition of 30 acres in Valliyoor</li>
+        <li><strong>Bangalore Office Setup:</strong> Rs. 50 million - Establishment of the corporate office</li>
+        <li><strong>Startup Seed Capital:</strong> Rs. 50 million - Direct seed capital for incubating startups</li>
+      </ul>
+    </section>
+
+    <section id="market">
+      <h2>Market Opportunity</h2>
+      <p>The sectors we target—healthcare, fintech, electric vehicles (EV), renewable energy, and artificial intelligence (AI)—are experiencing exponential growth both globally and within India:</p>
+
+      <ul>
+        <li>Healthcare: Digital transformation and telemedicine</li>
+        <li>Fintech: Digital payments and financial inclusion</li>
+        <li>EV: Clean energy adoption and manufacturing</li>
+        <li>AI: Disruptive solutions across industries</li>
+      </ul>
+    </section>
+
+    <section id="value">
+      <h2>Value Proposition</h2>
+      <p>Investing in or partnering with our incubator offers benefits that extend beyond financial returns:</p>
+
+      <ul>
+        <li><strong>Financial Returns:</strong> Equity in high-potential startups and real estate appreciation</li>
+        <li><strong>Strategic Impact:</strong> Shape India's innovation landscape</li>
+        <li><strong>Ecosystem Building:</strong> Contribute to a self-sustaining innovation hub</li>
+        <li><strong>Partnership Opportunities:</strong> Engage as mentor, co-investor, or expert advisor</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Visionary Startup Incubator. All rights reserved.</p>
+    <div class="contact-info">
+      <a href="mailto:dhaya.singh@xa1.in">dhaya.singh@xa1.in</a>
+      <span>|</span>
+      <a href="tel:+919600234700">+91 9600 234 700</a>
+    </div>
+  </footer>
   </section>
 
   <section id="vision">
