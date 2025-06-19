@@ -474,8 +474,8 @@
       });
     });
 
-    // Add active class to nav links on scroll
-    window.addEventListener('scroll', () => {
+    // Handle navigation highlighting
+    const handleNavHighlight = () => {
       const scrollPosition = window.scrollY;
       
       document.querySelectorAll('section').forEach(section => {
@@ -492,8 +492,27 @@
           });
         }
       });
+    };
+
+    // Observe DOM changes
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach(mutation => {
+        if (mutation.type === 'childList') {
+          // Reattach scroll event listener if sections are re-added
+          window.addEventListener('scroll', handleNavHighlight);
+        }
+      });
     });
 
+    // Start observing the document body
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+
+    // Initial setup
+    window.addEventListener('scroll', handleNavHighlight);
+    
     // Highlight active section in nav
     document.addEventListener('DOMContentLoaded', () => {
       const currentSection = window.location.hash;
