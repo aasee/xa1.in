@@ -13,8 +13,9 @@
       --secondary: #003366;
       --accent: #0074D9;
       --text: #FFFFFF;
-      --text-secondary: #E0E0E0;
+      --text-secondary: #B3B3B3;
       --background: #001A35;
+      --nav-background: rgba(0, 31, 63, 0.9);
     }
 
     * {
@@ -41,11 +42,72 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(0, 31, 63, 0.95);
+      background: var(--nav-background);
       backdrop-filter: blur(10px);
       padding: 1.2rem 5%;
       z-index: 1000;
       box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 0.5rem 0;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus {
+      color: white;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
     }
 
     .nav-container {
@@ -102,15 +164,15 @@
     /* Header */
     header {
       background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-      min-height: 100vh;
+      padding: 2rem 2rem 4rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 8rem 2rem 6rem;
       position: relative;
       overflow: hidden;
+      margin-bottom: 4rem;
     }
 
     header::before {
@@ -172,6 +234,12 @@
       color: var(--text-secondary);
       margin-bottom: 1.5rem;
       line-height: 1.8;
+      font-weight: 400;
+    }
+
+    section strong {
+      color: white;
+      font-weight: 600;
     }
 
     section h3 {
