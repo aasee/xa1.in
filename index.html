@@ -1,91 +1,118 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>xA1.in</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Load PDF.js from CDN first! -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visionary Startup Incubator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
-    html, body { height: 100%; margin: 0; }
-    body { background: #222; }
-    #pdf-canvas { width: 100vw; height: 100vh; display: block; margin: 0 auto; background: #444; }
-    #pager { text-align: center; margin: 10px 0; }
-    button { font-size: 1.2em; }
-    #page-num { color: #fff; }
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #333;
+      background-color: #fff;
+    }
+    header, section, footer {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    header {
+      background-color: #003366;
+      color: #fff;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    section h2 {
+      color: #003366;
+    }
+    .image-container img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      margin: 1rem 0;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    footer {
+      background-color: #f0f0f0;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
-  <div id="pager">
-    <button id="prev">Previous</button>
-    <span id="page-num"></span>
-    <button id="next">Next</button>
-  </div>
-  <canvas id="pdf-canvas"></canvas>
-  <!-- Place your script after loading PDF.js -->
-  <script>
-    // Check if pdfjsLib is available
-    if (typeof pdfjsLib === 'undefined') {
-      alert('PDF.js library failed to load. Check your internet connection or CDN availability.');
-    } else {
-      const url = 'file.pdf';
-      let pdfDoc = null, pageNum = 1, pageRendering = false, pageNumPending = null;
-      const scale = 1.2, canvas = document.getElementById('pdf-canvas'), ctx = canvas.getContext('2d');
+  <header>
+    <h1>Investment and Partnership Opportunity in a Visionary Startup Incubator</h1>
+    <p>by Dhaya SinghDS</p>
+  </header>
 
-      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.worker.min.js';
+  <section>
+    <h2>Introduction: Fostering Innovation in High-Impact Sectors</h2>
+    <p>This document outlines an exciting investment and partnership opportunity in a pioneering startup incubator poised to redefine India's innovation landscape. We are building a comprehensive ecosystem designed to identify, nurture, and scale early-stage startups across high-impact sectors: healthcare, fintech, electric vehicles (EV), renewable energy, and artificial intelligence (AI). Our strategic approach combines a dynamic corporate presence in Bangalore with a large-scale, cost-effective development center in Valliyoor, Tirunelveli District. This dual-hub model will foster a robust, self-sustaining environment for innovation, generating significant economic and social impact, and delivering substantial returns for our investors and partners.</p>
+    <p>We are thrilled to present a unique opportunity to invest in and partner with a groundbreaking startup incubator. Our core mission is to cultivate innovation within critical, high-growth sectors, including healthcare, fintech, electric vehicles (EV), renewable energy, and artificial intelligence (AI). By empowering promising early-stage startups, we aim to transform ambitious ideas into scalable, market-ready solutions that drive profound economic and social impact, not only within India but also on a global scale.</p>
+    <p>Our strategic vision involves establishing a resilient and vibrant ecosystem that serves as a beacon for entrepreneurial success. This ecosystem will be anchored by a state-of-the-art corporate office situated in Bangalore, India's undisputed technology capital, which will serve as the strategic and networking hub. Complementing this, we are developing a large-scale, cost-efficient development center in Valliyoor, located in the Tirunelveli District. This dual-location strategy allows us to leverage Bangalore's talent pool and connectivity while benefiting from the scalable and economically viable environment of Valliyoor, ultimately creating a sustainable and thriving hub for innovation and long-term growth.</p>
+  </section>
 
-      function renderPage(num) {
-        pageRendering = true;
-        pdfDoc.getPage(num).then(function(page) {
-          const viewport = page.getViewport({scale});
-          canvas.height = viewport.height;
-          canvas.width = viewport.width;
+  <section>
+    <h2>Strategic Vision: Building a Self-Sustaining Innovation Ecosystem</h2>
+    <p>Our incubator is built upon a strategically integrated vision designed not only to nurture high-potential startups but also to establish a self-sustaining ecosystem that generates long-term value. This two-pronged approach combines urban connectivity with expansive development capabilities.</p>
+    <h3>Bangalore Corporate Office</h3>
+    <p>A 5,000 sq.ft state-of-the-art hub in Bangalore, India’s technology capital, will serve as the nerve center for operations, mentorship, and startup support. This prime location provides access to top-tier talent, investor networks, and a vibrant tech community, facilitating rapid growth and strategic collaborations for our incubated companies.</p>
+    <h3>Valliyoor Development Centre</h3>
+    <p>A sprawling 10-acre innovation campus in Valliyoor, Tirunelveli District, will provide startups with cutting-edge infrastructure, state-of-the-art laboratories, and expansive collaborative spaces. This center offers a highly cost-effective and scalable environment for extensive research, development, and prototyping, crucial for early-stage companies to grow without prohibitive overheads.</p>
+    <h3>Long-Term Development & Community Integration</h3>
+    <p>Beyond the initial development, we will acquire an additional 20 acres adjacent to the campus in Valliyoor, totaling 30 acres. This land is reserved for phased development over the next 10 years, envisioning an integrated community complete with residential spaces for employees and commercial amenities. This holistic approach will create a vibrant, integrated community to support the entire startup ecosystem, ensuring long-term sustainability, fostering local talent, and driving significant real estate value creation.</p>
+    <p>Our vision is to bridge the gap between innovative ideas and market success by providing startups with unparalleled mentorship, critical seed funding, and world-class facilities, all while actively fostering a thriving local economy and self-sufficient community in Valliyoor.</p>
+  </section>
 
-          const renderContext = {
-            canvasContext: ctx,
-            viewport: viewport
-          };
-          const renderTask = page.render(renderContext);
+  <section>
+    <h2>Funding Plan: Catalyzing Growth and Infrastructure</h2>
+    <p>To bring this ambitious vision to fruition, we are actively raising Rs. 250 million, structured in multiples of Rs. 5 million, from strategic investors and partners. This capital will be meticulously allocated across key areas to ensure both robust infrastructure development and direct empowerment of innovative startups.</p>
+    <ul>
+      <li><strong>Land Acquisition:</strong> Rs. 150 million - Acquisition of 30 acres in Valliyoor for the development center and future residential/commercial expansion.</li>
+      <li><strong>Bangalore Office Setup:</strong> Rs. 50 million - Establishment of the 5,000 sq.ft state-of-the-art corporate office in Bangalore, equipped with advanced facilities for startup operations and growth.</li>
+      <li><strong>Startup Seed Capital:</strong> Rs. 50 million - Direct seed capital for incubating promising early-stage startups, with a maximum investment of Rs. 5 million per company.</li>
+    </ul>
+    <p>This balanced allocation ensures that we not only establish world-class physical and operational infrastructure but also directly provide critical early-stage funding to innovative startups within our target sectors. This dual focus on foundational assets and direct investment maximizes the potential for success and long-term value creation.</p>
+  </section>
 
-          renderTask.promise.then(function() {
-            pageRendering = false;
-            if (pageNumPending !== null) {
-              renderPage(pageNumPending);
-              pageNumPending = null;
-            }
-          });
-        });
-        document.getElementById('page-num').textContent = `Page ${num} of ${pdfDoc.numPages}`;
-      }
+  <section>
+    <h2>Market Opportunity: Tapping into India's Exponential Growth Sectors</h2>
+    <p>The sectors our incubator targets—healthcare, fintech, electric vehicles (EV), renewable energy, and artificial intelligence (AI)—are not merely growing; they are experiencing exponential transformation both globally and, more acutely, within the dynamic landscape of India.</p>
+    <p>India’s startup ecosystem is in an unprecedented boom, with Bangalore firmly established as a global tech hub, attracting significant investment and talent. Simultaneously, emerging regions like Valliyoor offer unique advantages, providing cost-effective, scalable environments ideal for the extensive R&D and operational growth required by deep-tech startups.</p>
+    <p>The healthcare market in India is undergoing a massive digital overhaul, with projections indicating significant growth driven by increasing digital adoption, telemedicine, and health-tech innovations. Similarly, the fintech sector is burgeoning, fueled by digital payments, financial inclusion initiatives, and disruptive solutions in lending, insurance, and wealth management. The EV and renewable energy sectors align perfectly with India’s aggressive national sustainability goals and ambitious targets for clean energy adoption, creating a massive addressable market for innovative solutions in manufacturing, infrastructure, and energy storage. Lastly, AI continues to be a universal disruptor, revolutionizing every industry from logistics and customer service to healthcare diagnostics and advanced analytics, creating immense potential for groundbreaking innovation across all our target sectors.</p>
+    <p>By strategically supporting startups at the intersection of these high-growth sectors, our incubator is uniquely positioned to capitalize on these powerful trends, drive transformative change, and deliver substantial financial returns for our investors.</p>
+  </section>
 
-      function queueRenderPage(num) {
-        if (pageRendering) {
-          pageNumPending = num;
-        } else {
-          renderPage(num);
-        }
-      }
+  <section>
+    <h2>Value Proposition for Investors and Partners</h2>
+    <p>Investing in or partnering with our visionary incubator offers a compelling suite of benefits that extend beyond traditional financial returns, encompassing strategic impact and robust ecosystem building.</p>
+    <ul>
+      <li><strong>Financial Returns:</strong> Gain direct equity stakes in a diversified portfolio of high-potential, early-stage startups operating within some of India’s fastest-growing sectors. Additionally, benefit from the significant appreciation of strategically acquired and developed land in Valliyoor.</li>
+      <li><strong>Strategic Impact:</strong> Play a pivotal and transformative role in shaping India’s burgeoning innovation landscape by supporting disruptive technologies in critical sectors.</li>
+      <li><strong>Ecosystem Building:</strong> Contribute to a self-sustaining innovation hub that integrates infrastructure, mentorship, and early-stage funding.</li>
+      <li><strong>Partnership Opportunities:</strong> Engage actively as a mentor, co-investor, or expert advisor to our startups.</li>
+    </ul>
+    <p>Our leadership team is committed to transparency, integrity, and excellence, ensuring that every investment contributes to both financial prosperity and societal advancement.</p>
+  </section>
 
-      function onPrevPage() {
-        if (pageNum <= 1) return;
-        pageNum--;
-        queueRenderPage(pageNum);
-      }
+  <section>
+    <h2>Call to Action: Join Us in Shaping India's Future</h2>
+    <p>We invite visionary investors and strategic partners to join us. Your involvement will be instrumental in building a lasting legacy of innovation and sustainable growth across India’s most critical sectors.</p>
+    <p>Invest Rs. 5 million or multiples thereof to gain equity in high-potential startups and benefit from strategic real estate appreciation.</p>
+    <p>Alternatively, partner with us as a mentor, co-investor, or industry expert. Your guidance and specialized knowledge will help startups achieve rapid scale. Contact us via WhatsApp at <strong>+91 9600 234 700</strong>.</p>
+  </section>
 
-      function onNextPage() {
-        if (pageNum >= pdfDoc.numPages) return;
-        pageNum++;
-        queueRenderPage(pageNum);
-      }
-
-      document.getElementById('prev').addEventListener('click', onPrevPage);
-      document.getElementById('next').addEventListener('click', onNextPage);
-
-      pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
-        pdfDoc = pdfDoc_;
-        renderPage(pageNum);
-      });
-    }
-  </script>
+  <footer>
+    <p>&copy; 2025 Visionary Startup Incubator | Designed from original investor pitch PDF</p>
+  </footer>
 </body>
 </html>
