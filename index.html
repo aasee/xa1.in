@@ -4,8 +4,291 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Visionary Startup Incubator</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary: #001F3F;
+      --secondary: #003366;
+      --accent: #0074D9;
+      --text: #FFFFFF;
+      --text-secondary: #E0E0E0;
+      --background: #001A35;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.7;
+      color: var(--text);
+      background-color: var(--background);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 31, 63, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 1.2rem 5%;
+      z-index: 1000;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus {
+      color: white;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 8rem 2rem 6rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(0, 116, 217, 0.1) 0%, transparent 40%);
+      pointer-events: none;
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin: 0 0 1.5rem;
+      line-height: 1.2;
+      max-width: 900px;
+      letter-spacing: -1px;
+    }
+
+    header p {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      max-width: 700px;
+      margin: 0 auto 3rem;
+    }
+
+    /* Sections */
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 6rem 2rem;
+    }
+
+    section h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 2.5rem;
+      color: white;
+      position: relative;
+      display: inline-block;
+    }
+
+    section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    section p {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+    }
+
+    section h3 {
+      font-size: 1.5rem;
+      margin: 2.5rem 0 1rem;
+      color: white;
+      font-weight: 600;
+    }
+
+    section ul {
+      list-style: none;
+      margin: 1.5rem 0;
+    }
+
+    section ul li {
+      position: relative;
+      padding-left: 1.75rem;
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+
+    section ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    section strong {
+      color: white;
+      font-weight: 600;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--primary);
+      color: var(--text-secondary);
+      text-align: center;
+      padding: 3rem 2rem;
+      font-size: 0.95rem;
+    }
+
+    /* Links */
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #7FDBFF;
+      text-decoration: underline;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      header h1 {
+        font-size: 2.8rem;
+      }
+
+      section {
+        padding: 5rem 2rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      header {
+        padding: 7rem 1.5rem 5rem;
+      }
+
+      header h1 {
+        font-size: 2.2rem;
+      }
+
+      header p {
+        font-size: 1.1rem;
+      }
+
+      section h2 {
+        font-size: 2rem;
+      }
+
+      section {
+        padding: 4rem 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      section h2 {
+        font-size: 1.75rem;
+      }
+
+      section p, section li {
+        font-size: 1rem;
+      }
+    }
     * {
       box-sizing: border-box;
     }
@@ -90,15 +373,17 @@
 </head>
 <body>
   <nav>
-    <div class="logo">Startup Incubator</div>
-    <ul>
-      <li><a href="#introduction">Introduction</a></li>
-      <li><a href="#vision">Vision</a></li>
-      <li><a href="#funding">Funding</a></li>
-      <li><a href="#market">Market</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <div class="nav-container">
+      <a href="#" class="logo">Startup Incubator</a>
+      <ul class="nav-links">
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#vision">Vision</a></li>
+        <li><a href="#funding">Funding</a></li>
+        <li><a href="#market">Market</a></li>
+        <li><a href="#value">Value</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
   </nav>
   <header>
     <h1>Investment and Partnership Opportunity in a Visionary Startup Incubator</h1>
@@ -164,7 +449,58 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 Visionary Startup Incubator</p>
+    <div class="footer-content">
+      <p>&copy; 2025 Visionary Startup Incubator. All rights reserved.</p>
+      <p>Contact: <a href="mailto:dhaya.singh@xa1.in" style="color: var(--accent);">dhaya.singh@xa1.in</a> | <a href="tel:+919600234700" style="color: var(--accent);">+91 9600 234 700</a></p>
+    </div>
   </footer>
+
+  <script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80, // Adjust for fixed header
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Add active class to nav links on scroll
+    window.addEventListener('scroll', () => {
+      const scrollPosition = window.scrollY;
+      
+      document.querySelectorAll('section').forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          document.querySelectorAll('.nav-links a').forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${sectionId}`) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    });
+
+    // Highlight active section in nav
+    document.addEventListener('DOMContentLoaded', () => {
+      const currentSection = window.location.hash;
+      if (currentSection) {
+        document.querySelector(`.nav-links a[href="${currentSection}"]`).classList.add('active');
+      }
+    });
+  </script>
 </body>
 </html>
